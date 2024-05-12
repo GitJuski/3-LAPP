@@ -14,6 +14,10 @@ I've only tested this on a Windows host and using the vagrant-master functionali
 
 ### Disclaimer! I am not to be held responsible for any damages or losses this module might directly or indirectly cause. Use it at your own risk.
 
+The VirtualBox version 7.0.16 causes a BSOD if you try to connect to a vm. I installed an older version to avoid this. I checked the binaries today (12.5.2024) and found out that the newest version is 7.0.18.
+
+![1](images/18.PNG)
+
 ## Business purpose
 
 This module creates a test 3-tier test environment for learning, testing and development. This can be used to:
