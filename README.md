@@ -73,6 +73,7 @@ Once you are in, there should be the MasterSetup.py file inside the home directo
 
 - Automatic setup:
     - Run the script as with sudo. Example -> `sudo python3 MasterSetup.py --vagrant-master`
+    - During the script you need to accept the ufw enable
 
 ![1](images/3.PNG)
 
@@ -80,7 +81,7 @@ The script can be run again.
 
 ![1](images/4.PNG)
 
-This is a know bug that happens most of the time when running the universal state or the highstate (top.sls) for the first time. The minions go down and the fastest way to continue would be to manually restart the minions. Open a new powershell and connect to the minions individually. Then run `sudo systemctl restart salt-minion.service`. Check the status after restart. They should be online. After this procedure I've not run into the same problem again. It is always the first run and after that everything just works, atleast in my case.
+This is a known bug that happens most of the time when running the universal state or the highstate (top.sls) for the first time. The minions go down and the fastest way to continue would be to manually restart the minions. Open a new powershell and connect to the minions individually. Then run `sudo systemctl restart salt-minion.service`. Check the status after restart. They should be online. After this procedure I've not run into the same problem again. It is always the first run and after that everything just works, atleast in my case.
 
 My recommended way of going on about this:
     - Run the universal state individually first. `sudo salt '*' state.apply universal`
