@@ -1,0 +1,9 @@
+[Unit]
+Description=GunicornSite
+After=network.target
+
+[Service]
+User=gunicorn
+Group=gunicorn
+WorkingDirectory=/home/vagrant/website/trio
+ExecStart=/home/vagrant/website/env/bin/gunicorn --workers 3 --bind 192.168.69.102:8000 --certfile=/etc/ssl/certs/gunicorn-selfsigned.crt --keyfile=/etc/ssl/private/gunicorn-selfsigned.key trio.wsgi:application
