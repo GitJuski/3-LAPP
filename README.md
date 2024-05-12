@@ -10,7 +10,9 @@ I won't be updating, fixing or finalizing this project for a little while. The r
 
 # The product
 
-I've only tested this on a Windows host and using the vagrant-master functionality. The name "3-LAPP" means a 3-tier architecture with Linux, Apache, PostgreSQL and Python.
+I've only tested this on a Windows host and using the vagrant-master functionality. The name "3-LAPP" means a 3-tier architecture with Linux, Apache, PostgreSQL and Python. You should have Vagrant, Hypervisor of your choosing (I recommend VirtualBox) and python (optional) installed and configured.
+
+### Disclaimer! I am not to be held responsible for any damages or losses this module might directly or indirectly cause. Use it at your own risk.
 
 ## Business purpose
 
