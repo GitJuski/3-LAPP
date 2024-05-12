@@ -121,11 +121,19 @@ One way of transferring these files is by using netcat like so:
 
 ![1](images/12.PNG)
 
+- Web server
+    - `sudo ufw allow from 192.168.69.102 to any port 8080`
+    - `cd /home/vagrant/website/static && nc -l -p 8080 -v -v -q 2 | tar xf -`
+
+- App server
+    - `cd /home/vagrant/website/trio/static/ && tar cf - . | nc 192.168.69.101 8080 -C -q 2 -v -v`
+
+
 Another fast way is by utilising the python http.server.
 - In the app server, go to the /home/vagrant/website/trio/static directory and use `python3 -m http.server`.
 - In the web server, use `wget 192.168.69.102/admin` to get the files. Remember to choose ports and make holes in the firewall accordingly.
 
-Neither of these methods is encrypted, so if you don't want to transfer files in the clear, use a different tool like scp, sftp etc.
+Neither of these methods are encrypted, so if you don't want to transfer files in the clear, use a different tool like scp, sftp etc.
 
 After you have transferred the files, the admin panel should look like this.
 
