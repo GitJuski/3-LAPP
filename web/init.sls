@@ -71,5 +71,5 @@ check:
 
 hole:
   cmd.run:
-    - name: 'sudo ufw allow 443/tcp'
+    - name: 'sudo ufw allow proto tcp from any to any port 80,443'
     - unless: 'sudo ufw status verbose | grep 443'

@@ -1,5 +1,5 @@
-# Usage -> To provision a master vm use the flag --vagrant-master or -vm. Example -> python3 VagrantSetup --vagrant-master. This will provision (web, app, db, master)
-# To use your own created master or host master, simply leave out the flags. Example -> python3 VagrantSetup
+# Usage -> To provision a master vm use the flag --vagrant-master or -vm. Example -> python3 VagrantSetup.py --vagrant-master. This will provision (web, app, db, master)
+# To use your own created master or host master, simply leave out the flags. Example -> python3 VagrantSetup.py
 # There is no salt-master support on Windows. That's why I recommend using the flags provided if using Windows. Without the flags, it will only provision (web, app, db), so you need to configure an external master.
 
 import os
@@ -8,7 +8,10 @@ from sys import platform, argv
 
 flag = argv[-1]
 
-if flag != 'VagrantSetup.py' or flag != '--vagrant-master' or flag != '-vm':
+flags = ['VagrantSetup.py', '.\VagrantSetup.py', '--vagrant-master', '-vm']
+
+if flag not in flags:
+    print(flag)
     raise ValueError('Incorrect flag, did you mean --vagrant-master or -vm')
 
 user = os.getlogin()
@@ -25,7 +28,7 @@ elif platform == 'linux' or platform == 'linux2':
     parent += f'/home/{user}/'
 
 else:
-    print('Not an OS I know!')
+    raise SystemError('Unsupported Operating System')
 
 
 
@@ -74,12 +77,12 @@ if flag == '--vagrant-master' or flag == '-vm':
 
 else:
 
-    with open(f'{path}Vagrantfile, r') as file:
+    with open(f'{path}Vagrantfile', 'r') as file:
         lines = file.readlines()
 
     new_file = [line for line in lines if 'master' not in line.lower()]
 
-    with open(f'{path}Vagrantfile, w') as file:
+    with open(f'{path}Vagrantfile', 'w') as file:
         file.writelines(new_file)
 
-#os.system('dir')
+    os.system('dir')

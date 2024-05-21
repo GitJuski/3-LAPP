@@ -1,5 +1,5 @@
-# Usage -> Please use the flag --vagrant-master or -vm if you are using a vagrant master. Example -> sudo python3 MasterSetup --vagrant-master
-# To use on your own created master of host master, simply leave out the flags. Example -> sudo python3 MasterSetup
+# Usage -> Please use the flag --vagrant-master or -vm if you are using a vagrant master. Example -> sudo python3 MasterSetup.py --vagrant-master
+# To use on your own created master of host master, simply leave out the flags. Example -> sudo python3 MasterSetup.py
 # sudo is needed for the script to be able to copy files to /srv/salt/
 
 import os
