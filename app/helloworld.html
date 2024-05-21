@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Welcome friend!</h1>
+
+<ul>
+        {% for i in notes %}
+                <li>
+                        <h3>{{ i.title }}</h3>
+                        <p>{{ i.description}}<br>
+                        Coolness: {{ i.coolness }}</p>
+                </li>
+        {% endfor %}
+</ul>
+
+</body>
+</html>

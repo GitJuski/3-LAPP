@@ -46,7 +46,7 @@ if flag == '--vagrant-master' or flag == '-vm':
         for file in files:
             os.chmod(os.path.join(root, file), 0o644)
 
-else:
+elif flag == 'MasterSetup.py':
 
     os.system('sudo salt-key -A -y')
 
@@ -71,3 +71,6 @@ else:
 
         for file in files:
             os.chmod(os.path.join(root, file), 0o644)
+
+else:
+    raise ValueError('Incorrect flag, did you mean --vagrant-master or -vm')

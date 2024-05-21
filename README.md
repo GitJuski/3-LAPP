@@ -151,6 +151,14 @@ Then you can log in.
 
 ![1](images/15.PNG)
 
+Then you can open the 'Hello worlds'. There you can click on the 'ADD HELLO WORLD' and fill out the title, description and select a coolness grade. Here's and example where I've added two hello worlds.
+
+![1](images/20.PNG)
+
+Once you have added them, refresh the frontpage to see the values like in the image below.
+
+![1](images/21.PNG)
+
 I highly recommend changing the default password of the db user postgres and removing the last two states from the init.sls. You can change the password in the db server with ALTER USER postgres PASSWORD <'password'>. You need to connect to the db first with `sudo -u postgres psql`. Remember to update the django settings accordingly.
 
 ![1](images/16.PNG)

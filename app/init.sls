@@ -75,6 +75,21 @@ models:
     - user: vagrant
     - group: vagrant
 
+admin:
+  file.managed:
+    - name: /home/vagrant/website/trio/three/admin.py
+    - source: salt://app/admin.py
+    - user: vagrant
+    - group: vagrant
+
+templates:
+  file.managed:
+    - name: /home/vagrant/website/trio/three/templates/helloworld.html
+    - source: salt://app/helloworld.html
+    - user: vagrant
+    - group: vagrant
+    - makedirs: True
+
 settings:
   file.managed:
     - name: /home/vagrant/website/trio/trio/settings.py

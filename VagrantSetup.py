@@ -8,6 +8,9 @@ from sys import platform, argv
 
 flag = argv[-1]
 
+if flag != 'VagrantSetup.py' or flag != '--vagrant-master' or flag != '-vm':
+    raise ValueError('Incorrect flag, did you mean --vagrant-master or -vm')
+
 user = os.getlogin()
 
 parent = ''
